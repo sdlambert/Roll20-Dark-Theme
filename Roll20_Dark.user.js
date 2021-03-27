@@ -393,7 +393,7 @@ body {
     padding-left: 45px !important;
 }
 
-#floatingtoolbar div.submenu ul li span {
+#floatingtoolbar div.submenu ul li:not(.rolldice) span {
 	padding-left: 10px !important;
 }
 
@@ -426,10 +426,23 @@ body {
     background-color: #282150 !important;
 }
 
-#floatingtoolbar li, #floatinglayerbar li {
+#floatingtoolbar li:not(.rolldice), #floatinglayerbar li:not(.rolldice) {
 	border: 0 !important;
 	color:hsl(0,0%,80%) !important;
 }
+
+#floatingtoolbar li.quickdice,
+#floatingtoolbar li.quickdice .quickdice-label,
+#floatingtoolbar li.quickdice .quickdice-button,
+#floatingtoolbar li.quickdice .quickdice-toggle {
+    border: 1px solid #444;
+}
+
+#floatingtoolbar li.quickdice .quickdice-button:hover,
+#floatingtoolbar li.quickdice .quickdice-toggle[data-toggle="true"] {
+ background-color:#999;
+}
+
 
 #ttaudio_results .result,
 #battlebards_results .result,
@@ -447,7 +460,7 @@ body {
 
 #floatingtoolbar li.activebutton,
 #floatingtoolbar li:hover {
-background-color: #282150 !important;
+    background-color: #282150 !important;
 }
 
 #page-toolbar {

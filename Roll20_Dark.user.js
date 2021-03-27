@@ -387,13 +387,13 @@ body {
 	padding: 0 !important;
 }
 
-#floatingtoolbar div.submenu ul li:not(.rolldice) {
+#floatingtoolbar div.submenu ul li:not(.quickdice) {
 	color:hsl(0,0%,80%) !important;
 	padding-right: 20px !important;
     padding-left: 45px !important;
 }
 
-#floatingtoolbar div.submenu ul li:not(.rolldice) span {
+#floatingtoolbar div.submenu ul li:not(.quickdice) span {
 	padding-left: 10px !important;
 }
 
@@ -426,16 +426,28 @@ body {
     background-color: #282150 !important;
 }
 
-#floatingtoolbar li:not(.rolldice), #floatinglayerbar li:not(.rolldice) {
+#floatingtoolbar li:not(.quickdice), #floatinglayerbar li:not(.quickdice) {
 	border: 0 !important;
 	color:hsl(0,0%,80%) !important;
+}
+
+#floatingtoolbar div.submenu ul li.quickdice {
+    padding-left: 0 !important
+}
+
+#floatingtoolbar div.submenu ul.selZoom li {
+    padding-left: 10px !important;
+}
+
+#floatingtoolbar div.submenu li#diceroller ul {
+    padding: 3px !important;
 }
 
 #floatingtoolbar li.quickdice,
 #floatingtoolbar li.quickdice .quickdice-label,
 #floatingtoolbar li.quickdice .quickdice-button,
 #floatingtoolbar li.quickdice .quickdice-toggle {
-    border: 1px solid #444;
+    border-bottom: 1px solid #444;
 }
 
 #floatingtoolbar li.quickdice .quickdice-button:hover,

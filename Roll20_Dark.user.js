@@ -1,15 +1,348 @@
 // ==UserScript==
 // @name          Roll20 Dark
-// @namespace     https://openuserjs.org/scripts/RedReign/Roll20_Dark
+// @namespace     https://openuserjs.org/scripts/Pharonix/Roll20_Dark
 // @description	  A dark theme for Roll20.net.
-// @author        RedReign
+// @author        RedReign edited by Pharonix
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.8.07.1
+// @version       2021.3.25.0
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
+
+.first-child {
+    /* margin-left: 0; */
+    background-color: hsl(0,0%,10%);
+    color: hsl(0,0%,80%);
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    background-color: hsl(0,0%,10%);
+    color: hsl(0,0%,80%);
+}
+
+.licensecontainer .container:not(.npc) .core .col2 .vitals {
+    background: url(https://gistcdn.githack.com/RedReign/70800980c89d9a8ed2029f0136ae75f0/raw/a608c0a7f952138d35717dea053529d800f2201d/vitals.svg) 
+}
+.licensecontainer .container:not(.npc) .core .col2 .vitals:after {
+  content: "";
+  border: 10px solid;
+  border-image-source: url(https://gistcdn.githack.com/RedReign/7080098…/raw/a608c0a…/vitals.svg)!important;
+  border-image-slice: 10 fill;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ui-draggable .ui-dialog-titlebar {
+    background-color: hsl(0,0%,10%);
+}
+
+.ui-dialog .ui-dialog-title {
+    color: #BFBFBF;
+}
+
+.ui-dialog .ui-dialog-titlebar-close span {
+    background-color: #BFBFBF;
+}
+
+input[type=radio].tab-button.core:checked ~ .page.core, input[type=radio].tab-button.bio:checked ~ .page.bio, input[type=radio].tab-button.spells:checked ~ .page.spells, input[type=radio].tab-button.options:checked ~ .page.options {
+    background-color: hsl(0,0%,10%);
+}
+
+.licensecontainer .container:not(.npc) .core .col2 .vitals {
+    background: url(https://gistcdn.githack.com/RedReign/70800980c89d9a8ed2029f0136ae75f0/raw/a608c0a7f952138d35717dea053529d800f2201d/vitals.svg) !important;
+}
+
+.licensecontainer .container:not(.npc) .insp-prof-container {
+    background: url(http://imgsrv.roll20.net/?src=https://gistcdn.githack.com/RedReign/5df74f374d39064c79790bba913c462a/raw/cb7a46e757ae6aad8f3383c2269d8e3a4b444f37/inspiration.svg) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    height: 40px;
+    margin-bottom: 2px;
+}
+
+.licensecontainer .container:not(.npc) .attributes-container {
+    background: url(http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/095e81e22e2394519fff623894d4e257/raw/23590048548cd1ed67f993350a00dd031f38c47b/abilityBackgroundEnd.svg);
+}
+
+.licensecontainer .container:not(.npc) .attr-container {
+    background: url(https://gistcdn.githack.com/RedReign/4eaabf71e6949e781d9763acea1cdd4a/raw/8c7a7fe6b406cb8ff37e1a4624f5902d301884fb/abilitySTR.svg) !important;
+}
+
+.insp-prof-container .value span {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 25px;
+}
+
+.licensecontainer .container:not(.npc) .saving-throw-container, .licensecontainer .container:not(.npc) .skills-container {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5px 5px 15px;
+    border: 10px solid black;
+    border-image-source: url("https://gistcdn.githack.com/RedReign/bb3b9263161822b2e7adeca6e821ab07/raw/f76ee4ec3f8afb94f64aafa4eb3a2f727da80cbe/OGLsaves.svg") !important;
+    border-image-slice: 65 10;
+    border-image-width: auto;
+    border-image-repeat: round;
+}
+
+div.globaldisplay {
+	background-color: #2a2a2a !important;
+}
+
+
+
+.licensecontainer .container:not(.npc) .core .col2 .vitals:after {
+    content: "";
+    border: 10px solid;
+    border-image-source: url("https://gistcdn.githack.com/RedReign/70800980c89d9a8ed2029f0136ae75f0/raw/a608c0a7f952138d35717dea053529d800f2201d/vitals.svg") !important;
+    border-image-slice: 10 fill;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.licensecontainer .container:not(.npc) .ac-init-speed-container .init, .licensecontainer .container:not(.npc) .ac-init-speed-container .speed {
+    background: url("https://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/cef80b44113b2b25d6a563861ef54275/raw/b1219d2ba4a3f721df88e4a4aea5790b412bb05c/box.svg") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center;
+    background-size: contain;
+    border: 0 !important;
+    min-height: 75px !important;
+    position: relative;
+}
+
+
+.licensecontainer .container:not(.npc) .ac-init-speed-container .ac {
+    background: url("https://gistcdn.githack.com/RedReign/80061e42296f262830cf1438164c73b7/raw/6ff4ae5fa6a452cd36c7a3ec727ba0044c84beda/OGLac.svg") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center;
+    background-size: contain;
+    min-height: 75px !important;
+    border: 0 !important;
+}
+.licensecontainer .container:not(.npc) .ac-init-speed-container .ac input {
+    margin-top: 10px;
+    background-color: transparent !important;
+}
+.licensecontainer .container:not(.npc) .ac-init-speed-container .ac .pc-ac {
+    width: 50% !important;
+    margin: 0 auto;
+    line-height: 8px !important;
+    color: #BFBFBF;
+}
+.licensecontainer .container:not(.npc) .ac-init-speed-container .init button, .licensecontainer .container:not(.npc) .ac-init-speed-container .speed .label, .licensecontainer .container:not(.npc) .hp .label {
+    position: absolute;
+    bottom: 5px;
+    color: #BFBFBF;
+}
+
+.licensecontainer .container:not(.npc) .attributes-container {
+    background: url("https://gistcdn.githack.com/RedReign/f862ed28ee28687ea3572d3a363a373e/raw/ea2e1ee747d16f1d8aa5db70baec3e3b4befab97/abilityBack.svg") !important;
+}
+.licensecontainer .container:not(.npc) .hp {
+    background-image: url("https://gistcdn.githack.com/RedReign/05cae179d7d3cc12fbd7ed06c3a2030e/raw/381aa6c33f83b35a63024f6de999120dec47e0b7/OGLvitalBottom.svg") !important;
+}
+.licensecontainer .container:not(.npc) .hp .top {
+    padding-top: 3px;
+    background-color: hsl(0,0%,10%)!important;
+}
+
+.licensecontainer .container:not(.npc) .subcontainer {
+	
+    background-color: transparent !important;
+    border-image-source: url("https://gistcdn.githack.com/RedReign/256d7e0a1d2ab439c359a1ed638b2778/raw/67a354930c383453878f4f1570623b609262e19f/OGLvitalBox.svg") !important;
+    border-image-slice: 15 15 fill !important;
+	
+}
+
+.licensecontainer .container:not(.npc) .pibf {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 6em;
+    margin-top: 5px;
+    border: 15px solid black;
+    border-image-source: url("https://gistcdn.githack.com/RedReign/105730a1af47e85c3e5935c9507c56f9/raw/50e7167541bd35b3cd1a77425415a2e7bc6503d3/OGLvitalTop.svg") !important;
+    border-image-slice: 35 15;
+    border-image-width: auto;
+    border-image-repeat: round;
+}
+.insp-prof-container span {
+    display: block;
+    font-size: 9px;
+    line-height: 12px;
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    color: #BFBFBF;
+}
+.attacks .display span, .tool .display span, .equipment .item span, .proficiencies .display span {
+    min-height: 12px;
+    display: inline-block;
+    margin-top: 0px;
+    padding: 4px;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    white-space: nowrap;
+	background-color: hsl(0,0%,10%)!important;
+}
+
+.pc div.global-dmg div.display span.title {
+    padding-right: 0px;
+    width: 40%;
+	background-color: hsl(0,0%,10%)!important;
+}
+
+.pc .global-mod .options-flag:not(:checked) ~ .display .subheader {
+    background-color: #EFEFEF;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    display: inline-block;
+    font-size: 9px;
+    font-weight: bold;
+    height: 16px;
+    padding-bottom: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 3px;
+    text-align: left;
+}
+button[name=attr_toolname] {
+  background-color: hsl(0,0%,10%)!important;
+}
+.globalattack span {
+    margin-top: 2px;
+    background-color: hsl(0,0%,10%) !important;
+}
+
+.label {
+    color: #BFBFBF!important;
+}
+
+.licensecontainer .container:not(.npc) div.page > div.header::after {
+  content: "";
+  width: 30px;
+  height: 162px;
+  position: absolute;
+  right: -60px;
+  background-image: url("https://gistcdn.githack.com/RedReign/cf1fae61a115894ffa29ed24884928aa/raw/e78c8d6d9bb5e2c080fc2cfa74f9a90d053c09d7/OGLscrollRight.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: right center;
+  background-size: 100% 100%;
+}
+
+.licensecontainer .container.pc .header .header-info {
+    margin-top: 30px;
+    margin-left: 51px;
+    background-image: url("https://gistcdn.githack.com/RedReign/73b5df43e0114ff932d0e76138bd7780/raw/94f941dfe655add03e361582d290053eb66be8a2/OGLcharBox.svg") !important;
+    background-position: 0;
+    padding: 14px;
+    background-size: cover;
+}
+
+/*
+BIO Tab in Char Sheet
+
+*/
+
+.licensecontainer .container:not(.npc) div.page.bio > div.header {
+    background: url("https://gistcdn.githack.com/RedReign/38cfe2044172cfdf65767bfd2d3472b6/raw/d15fb90aa8e01aeb586f25496ea4552f5a1e5c08/OGLbioScroll.svg") !important;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    background-position: 2px center;
+}
+.licensecontainer .container:not(.npc) .bio .textbox {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 10px;
+    border: 5px solid black;
+    border-image-source: url("https://gistcdn.githack.com/RedReign/5ee291a1048ad661e3d867aafa262af0/raw/282e8573c504f09f910b7b9e07ab0cf57a60eaa7/OGL5eBorder.svg") !important;
+    border-image-slice: 32 25;
+    border-image-width: auto;
+    border-image-repeat: round;
+    text-align: center;
+}
+.licensecontainer .container:not(.npc) div.page.spells > div.header {
+    background: url("https://gistcdn.githack.com/RedReign/38cfe2044172cfdf65767bfd2d3472b6/raw/d15fb90aa8e01aeb586f25496ea4552f5a1e5c08/OGLbioScroll.svg") !important;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+    background-position: 2px center;
+}
+
+.licensecontainer .container:not(.npc) .spell-level {
+	background: url("https://gistcdn.githack.com/RedReign/b9abd30f611eb4b015ca6dc316aebb73/raw/02538717a79c9e715ce8354619f7b7f1851703fd/OGLspellLevel.svg") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center;
+    background-size: cover;
+    height: 50px;
+}
+
+.options .row > span {
+    color: #BFBFBF;
+}
+.licensecontainer .container.pc .spells .header .header-info .part {
+    background-image: url("https://gistcdn.githack.com/RedReign/d4585ddcf78ceb581a975d860f8d52ec/raw/ceacd6383b6cc5ecb8364c61527add0f28312ef6/OGLspellHeadBlock.svg") !important;
+    background-position: top center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30%;
+}
+.options .row > span {
+    color: #BFBFBF !important;
+}
+
+.licensecontainer .container:not(.npc) .subcontainer .row-container input[type=checkbox]:checked {
+    background-color: orange !important;
+}
+
+/*
+=================================================
+NPC SHEETS
+*/
+
+.licensecontainer .npc_toggle[value="1"] ~ .npc {
+    background-color: hsl(0,0%,10%) !important;
+}
+.licensecontainer .npc_toggle[value="1"] ~ .npc .actions, .licensecontainer .npc_toggle[value="1"] ~ .npc .stat-block {
+    background-color: hsl(0,0%,10%) !important;
+}
+.licensecontainer .npc_toggle[value="1"] + .npcspellcastingflag[value="1"] ~ .pc .page.spells .body .col {
+    background-color: hsl(0,0%,10%) !important;
+}
+
+
+/*
+
+
+
+
+
+
+*/
+
+.ui-dialog {
+    background-color: hsl(0,0%,10%);
+    color: hsl(0,0%,80%);
+}
+
 .button-2{
 	background-color: hsl(0,0%,10%) !important;
 }
@@ -24,7 +357,7 @@
 }
 
 body {
-    background:url(http://subtlepatterns.com/patterns/dark_leather.png)!important;
+    background:url(https://www.toptal.com/designers/subtlepatterns/patterns/dark_leather.png)!important;
 }
 
 #floatingtoolbar, #floatinglayerbar {
@@ -52,10 +385,9 @@ body {
 	border: 0 !important;
 	border-radius: 0 !important;
 	padding: 0 !important;
-	width: 190px !important;
 }
 
-#floatingtoolbar div.submenu ul li {
+#floatingtoolbar div.submenu ul li:not(.rolldice) {
 	color:hsl(0,0%,80%) !important;
 	padding-right: 20px !important;
     padding-left: 45px !important;
@@ -1393,7 +1725,7 @@ div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-subcontainer 
     background-color: #444 !important;
 }
 
-div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-core .sheet-col2 {
+div.sheet-licensecontainer .sheet-container:not(.sheet-npc) .sheet-core .col col2 {
 	background: url("https://gistcdn.githack.com/RedReign/70800980c89d9a8ed2029f0136ae75f0/raw/a608c0a7f952138d35717dea053529d800f2201d/vitals.svg") !important;
 }
 
@@ -1506,6 +1838,9 @@ div.sheet-licensecontainer .sheet-container.sheet-pc .sheet-header .sheet-header
     background-image: url("https://gistcdn.githack.com/RedReign/73b5df43e0114ff932d0e76138bd7780/raw/94f941dfe655add03e361582d290053eb66be8a2/OGLcharBox.svg") !important;
 }
 
+.licensecontainer .container:not(.npc) div.page.core > div.header, .licensecontainer .container:not(.npc) div.page.options > div.header {
+    background-image: url("https://gistcdn.githack.com/RedReign/38cfe2044172cfdf65767bfd2d3472b6/raw/d15fb90aa8e01aeb586f25496ea4552f5a1e5c08/OGLbioScroll.svg") !important;
+}
 div.sheet-licensecontainer .sheet-container:not(.sheet-npc) div.sheet-page.sheet-bio > div.sheet-header {
     background-image: url("https://gistcdn.githack.com/RedReign/38cfe2044172cfdf65767bfd2d3472b6/raw/d15fb90aa8e01aeb586f25496ea4552f5a1e5c08/OGLbioScroll.svg") !important;
 }
@@ -1809,71 +2144,6 @@ div.sheet-rolltemplate-desc div.sheet-desc.sheet-info .sheet-bottom {
     background-color: hsl(0,0%,10%) !important;
     color: hsl(0,0%,75%) !important;
 }
-
-#background,
-.sheet-vitals-stats,
-.defaulttoken.tokenslot,
-.container,
-#dialog-window {
-    background-color: #1a1a1a !important;
-}
-
-.attrib .divider {
-    border-right: none;
-}
-
-.attributesabilities .abil {
-    border-bottom: 1px solid #444;
-}
-
-body {
-    color: #999;
-}
-
-.sheet-row .sheet-display > span[name*="attr_"] {
-    color: #999 !important;
-    background-color: transparent !important;
-}
-
-.charsheet .sheet-npc .sheet-trait .sheet-display .sheet-description,
-.charsheet .sheet-npc .sheet-reaction .sheet-display .sheet-description,
-.charsheet .sheet-npc .sheet-action .sheet-display .sheet-description {
-    color: #999 !important;
-}
-
-.sheet-display .sheet-row.sheet-subtitle span {
-	color: rgb(247, 125, 125) !important;
-}
-
-.ui-dialog .btn:not(.sheet-wrapper-button) {
-    border: 1px solid;
-}
-
-.licensecontainer .container:not(.npc) div.page.core > div.header,
-.licensecontainer .container:not(.npc) div.page.options > div.header {
-    background-image: url("https://gistcdn.githack.com/RedReign/e7758f7513b818ff9427a886cffc7fed/raw/45fcf8ecb0705f3352e966ed868fd57ff7c57232/OGLcharScroll.svg") !important;
-}
-
-.licensecontainer .container.pc .header .header-info {
-    background-image: url("https://gistcdn.githack.com/RedReign/73b5df43e0114ff932d0e76138bd7780/raw/94f941dfe655add03e361582d290053eb66be8a2/OGLcharBox.svg") !important;
-}
-
-.licensecontainer .container:not(.npc) .attributes-container {
-    background: url("https://gistcdn.githack.com/RedReign/f862ed28ee28687ea3572d3a363a373e/raw/ea2e1ee747d16f1d8aa5db70baec3e3b4befab97/abilityBack.svg") !important;
-}
-
-.licensecontainer .container:not(.npc) .attr-container {
-    background: url("https://gistcdn.githack.com/RedReign/4eaabf71e6949e781d9763acea1cdd4a/raw/8c7a7fe6b406cb8ff37e1a4624f5902d301884fb/abilitySTR.svg") !important;
-}
-
-.licensecontainer .container:not(.npc) .core .col2 .vitals::after {
-	border-image-source: url("https://gistcdn.githack.com/RedReign/70800980c89d9a8ed2029f0136ae75f0/raw/a608c0a7f952138d35717dea053529d800f2201d/vitals.svg") !important;
-}
-
-.licensecontainer .container:not(.npc) .pibf {
-    border-image-source: url("https://gistcdn.githack.com/RedReign/105730a1af47e85c3e5935c9507c56f9/raw/50e7167541bd35b3cd1a77425415a2e7bc6503d3/OGLvitalTop.svg") !important;
-}
-
 `;
 if (typeof GM_addStyle != "undefined") {
 	GM_addStyle(css);
